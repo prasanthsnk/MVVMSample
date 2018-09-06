@@ -1,6 +1,4 @@
 package com.example.prasanthsn.task.adapter;
-
-import android.annotation.SuppressLint;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.view.LayoutInflater;
@@ -22,13 +20,26 @@ public abstract class BaseBaseAdapter extends BaseAdapter {
         return i;
     }
 
-    @SuppressLint("ViewHolder")
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
-        LayoutInflater layoutInflater = LayoutInflater.from(viewGroup.getContext());
-        ViewDataBinding binding = DataBindingUtil.inflate(layoutInflater, getLayoutIdForPosition(position), viewGroup, false);
+//        LayoutInflater inflater = (LayoutInflater)
+//                viewGroup.getContext()
+//                        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//        ViewDataBinding  binding = DataBindingUtil.inflate(inflater, getLayoutIdForPosition(position), viewGroup, true);
+//        binding.setVariable(BR.obj, getDataAtPosition(position));
+//        binding.executePendingBindings();
+//        return binding.getRoot();
+//        //////////////
+        ViewDataBinding binding;
+        if(view == null){
+            view = LayoutInflater.from(viewGroup.getContext()).inflate(getLayoutIdForPosition(position), null);
+            binding = DataBindingUtil.bind(view);
+            view.setTag(binding);
+        }else{
+            binding = (ViewDataBinding) view.getTag();
+        }
+        assert binding != null;
         binding.setVariable(BR.obj, getDataAtPosition(position));
-        binding.executePendingBindings();
         return binding.getRoot();
     }
 

@@ -7,7 +7,7 @@ import java.util.List;
 
 public class DemoAdapter extends BaseRecycleViewAdapter {
 
-    List<ListViewModel> data;
+    private List<ListViewModel> data;
 
     // Provide a suitable constructor (depends on the kind of data)
     public DemoAdapter(List<ListViewModel> data) {

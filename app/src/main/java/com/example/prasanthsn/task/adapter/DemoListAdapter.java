@@ -6,9 +6,8 @@ import com.example.prasanthsn.task.viewmodels.ListViewModel;
 import java.util.List;
 
 public class DemoListAdapter extends BaseBaseAdapter {
-    List<ListViewModel> data;
+    private List<ListViewModel> data;
 
-    // Provide a suitable constructor (depends on the kind of data)
     public DemoListAdapter(List<ListViewModel> data) {
         this.data = data;
     }
