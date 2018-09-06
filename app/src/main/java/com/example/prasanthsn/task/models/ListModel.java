@@ -1,17 +1,10 @@
-package com.example.prasanthsn.task.viewmodels;
+package com.example.prasanthsn.task.models;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
-import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
 
-public class ListViewModel extends BaseObservable {
+public class ListModel extends BaseObservable {
 
-    public ListViewModel(String name, String age) {
-        this.name = name;
-        this.age = age;
-    }
     private String name;
     private String age;
 
@@ -31,9 +24,5 @@ public class ListViewModel extends BaseObservable {
 
     public void setAge(String age) {
         this.age = age;
-    }
-
-    public void onHandleClick(String name) {
-        Log.e("TAG", name);
     }
 }

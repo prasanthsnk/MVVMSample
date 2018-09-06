@@ -25,7 +25,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@{obj.age}" />
-
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> obj.onHandleClick(obj.name)}"
+            android:text="@string/handleclick" />
     </LinearLayout>
 
 </layout>

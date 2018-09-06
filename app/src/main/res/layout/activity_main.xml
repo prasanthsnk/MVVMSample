@@ -37,6 +37,12 @@
             android:layout_height="wrap_content"
             android:text="@{viewModel.text}" />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{viewModel::onHandleClick}"
+            android:text="@string/handleclick" />
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/my_recycler_view"
             android:layout_width="match_parent"
