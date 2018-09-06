@@ -5,8 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.ListView;
 
 import com.example.prasanthsn.task.adapter.DemoAdapter;
+import com.example.prasanthsn.task.adapter.DemoListAdapter;
 import com.example.prasanthsn.task.databinding.ActivityMainBinding;
 import com.example.prasanthsn.task.viewmodels.DemoViewModel;
 import com.example.prasanthsn.task.viewmodels.ListViewModel;
@@ -40,5 +42,9 @@ public class MainActivity extends AppCompatActivity {
         // define an adapter
         mAdapter = new DemoAdapter(items);
         recyclerView.setAdapter(mAdapter);
+
+        ListView listView = findViewById(R.id.my_list_view);
+        listView.setAdapter(new DemoListAdapter(items));
+
     }
 }

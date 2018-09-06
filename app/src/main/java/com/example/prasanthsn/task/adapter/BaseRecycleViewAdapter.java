@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import com.android.databinding.library.baseAdapters.BR;
 
-public abstract class BaseAdapter extends RecyclerView.Adapter<BaseAdapter.ViewHolder> {
+public abstract class BaseRecycleViewAdapter extends RecyclerView.Adapter<BaseRecycleViewAdapter.ViewHolder> {
 
     // Provide a reference to the views for each data item
 // Complex data items may need more than one view per item, and
